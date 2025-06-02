@@ -7,6 +7,172 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
+		<header>
+			<div class="logo">_Survey</div>
+			<nav class="navbar">
+				<a href="#" class="active">FILL OUT SURVEY</a>
+				<a href="#" class="inactive">VIEW SURVEY RESULTS</a>
+			</nav>
+		</header>
+		<section>
+			<form autocomplete="off">
+				<div class="personal-info">
+					<div class="personal">
+						<span>Personal Details:</span>
+					</div>
+					<div class="inputs">
+						<label for="fullname">Full Names</label><br />
+						<input type="text" name="fullname" id="fullname" /><br />
+						<label for="email">Email</label><br />
+						<input type="email" name="email" id="email" /><br />
+						<label for="dob">Date of Birth</label><br />
+						<input type="date" name="dob" id="dob" /><br />
+						<label for="contact">Contact Number</label><br />
+						<input type="tel" name="contact" id="contact" />
+					</div>
+				</div>
+				<div class="preferences">
+					<span>What is your favorite food?</span>
+					<div>
+						<input type="checkbox" name="food" id="pizza" /><label for="pizza"
+							>Pizza</label
+						>
+					</div>
+					<div>
+						<input type="checkbox" name="food" id="pasta" /><label for="pasta"
+							>Pasta</label
+						>
+					</div>
+					<div>
+						<input type="checkbox" name="food" id="pap-and-wors" /><label
+							for="pap-and-wors"
+							>Pap & Wors</label
+						>
+					</div>
+					<div>
+						<input type="checkbox" name="food" id="other" /><label for="other"
+							>Other</label
+						>
+					</div>
+				</div>
+				<div class="table-heading">
+					<p>
+						Please rate your level of agreement on a scale from 1 to 5, with 1
+						being "strongly agree" and 5 being "strongly disagree."
+					</p>
+				</div>
+				<div class="table-data">
+					<table>
+						<tr>
+							<th></th>
+							<th>Strongly Agree</th>
+							<th>Agree</th>
+							<th>Neutral</th>
+							<th>Disagree</th>
+							<th>Strongly Disagree</th>
+						</tr>
+						<tr>
+							<td>I like to watch movies</td>
+							<td>
+								<input type="radio" name="movies" id="movies-1" value="1" />
+							</td>
+							<td>
+								<input type="radio" name="movies" id="movies-2" value="2" />
+							</td>
+							<td>
+								<input type="radio" name="movies" id="movies-3" value="3" />
+							</td>
+							<td>
+								<input type="radio" name="movies" id="movies-4" value="4" />
+							</td>
+							<td>
+								<input type="radio" name="movies" id="movies-5" value="5" />
+							</td>
+						</tr>
+						<tr>
+							<td>I like to listen to radio</td>
+							<td>
+								<input type="radio" name="radio" id="radio-1" value="1" />
+							</td>
+							<td>
+								<input type="radio" name="radio" id="radio-2" value="2" />
+							</td>
+							<td>
+								<input type="radio" name="radio" id="radio-3" value="3" />
+							</td>
+							<td>
+								<input type="radio" name="radio" id="radio-4" value="4" />
+							</td>
+							<td>
+								<input type="radio" name="radio" id="radio-5" value="5" />
+							</td>
+						</tr>
+						<tr>
+							<td>I like to eat out</td>
+							<td>
+								<input type="radio" name="eat-out" id="eat-out-1" value="1" />
+							</td>
+							<td>
+								<input type="radio" name="eat-out" id="eat-out-2" value="2" />
+							</td>
+							<td>
+								<input type="radio" name="eat-out" id="eat-out-3" value="3" />
+							</td>
+							<td>
+								<input type="radio" name="eat-out" id="eat-out-4" value="4" />
+							</td>
+							<td>
+								<input type="radio" name="eat-out" id="eat-out-5" value="5" />
+							</td>
+						</tr>
+						<tr>
+							<td>I like to watch TV</td>
+							<td>
+								<input
+									type="radio"
+									name="television"
+									id="television-1"
+									value="1"
+								/>
+							</td>
+							<td>
+								<input
+									type="radio"
+									name="television"
+									id="television-2"
+									value="2"
+								/>
+							</td>
+							<td>
+								<input
+									type="radio"
+									name="television"
+									id="television-3"
+									value="3"
+								/>
+							</td>
+							<td>
+								<input
+									type="radio"
+									name="television"
+									id="television-4"
+									value="4"
+								/>
+							</td>
+							<td>
+								<input
+									type="radio"
+									name="television"
+									id="television-5"
+									value="5"
+								/>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="submit-btn"><button type="submit">Submit</button></div>
+			</form>
+		</section>
 		<script src="main.js"></script>
 	</body>
 </html>

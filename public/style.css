@@ -4,3 +4,185 @@
 	box-sizing: border-box;
 	font-family: "Times New Roman", Times, serif;
 }
+
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem;
+}
+
+.logo {
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+
+.active {
+	padding-right: 2rem;
+	text-decoration: none;
+}
+
+.inactive {
+	text-decoration: none;
+	color: black;
+}
+
+.personal-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 50%;
+	padding: 2rem;
+}
+
+.personal {
+	width: 50%;
+}
+
+.personal span {
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.inputs {
+	width: 50%;
+	height: auto;
+}
+
+.inputs input {
+	width: 100%;
+	padding: 0.5rem;
+	border: 1px solid blue;
+	border-radius: 2px;
+}
+
+.preferences {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1.2rem;
+	padding: 1.2rem;
+	width: 60%;
+}
+
+.preferences div input {
+	margin-right: 0.3rem;
+}
+
+.table-heading p {
+	padding: 1.2rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+}
+
+.table-data {
+	overflow-x: auto;
+}
+
+table {
+	width: 90%;
+	margin: 1.2rem;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+td,
+th {
+	padding: 1.2rem;
+	border: 1px solid black;
+	margin: 1.2rem;
+	border-collapse: collapse;
+	word-wrap: normal;
+}
+
+th {
+	background-color: blanchedalmond;
+}
+
+tr div input {
+	font-size: 4rem;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.submit-btn {
+	width: 10%;
+	margin: 0 auto;
+	padding: 1.2rem;
+}
+
+.submit-btn button {
+	padding: 0.5rem 1.2rem;
+	background-color: aqua;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 1.2rem;
+	cursor: pointer;
+}
+
+.submit-btn button:hover {
+	background-color: aquamarine;
+}
+
+@media screen and (max-width: 768px) {
+	header {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.navbar {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.personal-info {
+		flex-direction: column;
+		width: 100%;
+		padding: 1rem;
+	}
+
+	.personal,
+	.inputs {
+		width: 100%;
+	}
+
+	.inputs input {
+		width: 100%;
+	}
+
+	.preferences {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+		padding: 1rem;
+		gap: 0.8rem;
+	}
+
+	table {
+		width: 100%;
+		margin: 1rem 0;
+		font-size: 0.9rem;
+	}
+
+	td,
+	th {
+		padding: 0.6rem;
+		word-wrap: normal;
+	}
+
+	.submit-btn {
+		width: 100%;
+		text-align: center;
+		padding: 1rem;
+	}
+
+	.submit-btn button {
+		width: 80%;
+		font-size: 1rem;
+	}
+}
