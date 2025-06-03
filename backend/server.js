@@ -74,6 +74,7 @@ app.post(
 				fullName,
 				email,
 				dateOfBirth,
+				contactNumber,
 				likesPizza = false, // Default to false if not provided
 				likesPasta = false, // Default to false if not provided
 				likesPapWors = false, // Default to false if not provided
@@ -88,6 +89,7 @@ app.post(
 				fullName,
 				email,
 				dateOfBirth,
+				contactNumber,
 				preferences: {
 					likesPizza,
 					likesPasta,

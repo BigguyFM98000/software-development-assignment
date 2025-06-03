@@ -17,35 +17,6 @@ function getCheckedFoods(event) {
 	console.log(selectedValues); // Output the selected values
 }
 
-document
-	.getElementById("foodForm")
-	.addEventListener("submit", function (event) {
-		event.preventDefault(); // ⛔ Prevent page reload
-		const checkboxes = document.querySelectorAll('input[name="food"]:checked');
-		const selectedValues = Array.from(checkboxes).map((cb) => cb.value);
-		console.log(selectedValues); // Log or process selected values
-		for (let i = 0; i < selectedValues.length; i++) {
-			if (selectedValues[i] === "Pizza") {
-				likesPizza = true;
-			} else if (selectedValues[i] === "Pasta") {
-				likesPasta = true;
-			} else if (selectedValues[i] === "Pap & Wors") {
-				likesPapWors = true;
-			} else {
-				continue;
-			}
-		}
-		getSelectedRadio();
-		console.log(
-			likesPizza,
-			"pizza",
-			likesPasta,
-			"pasta",
-			likesPapWors,
-			"Pap & wors"
-		);
-	});
-
 function getSelectedRadio() {
 	const results = {
 		watchesTV: parseInt(getCheckedValue("television")),
@@ -62,19 +33,78 @@ function getSelectedRadio() {
 	let eatsOut = results.eatsOut >= 1 && results.eatsOut <= 3;
 	let watchesMovies = results.watchesMovies >= 1 && results.watchesMovies <= 3;
 
-	console.log(
-		watchesTV,
-		"TV",
-		listensToRadio,
-		"radio",
-		eatsOut,
-		"eatsout",
-		watchesMovies,
-		"movies"
-	);
+	return { watchesTV, listensToRadio, eatsOut, watchesMovies };
 }
 
 function getCheckedValue(groupName) {
 	const selected = document.querySelector(`input[name="${groupName}"]:checked`);
 	return selected ? selected.value : null;
 }
+
+document
+	.getElementById("foodForm")
+	.addEventListener("submit", async function (event) {
+		event.preventDefault();
+		const checkboxes = document.querySelectorAll('input[name="food"]:checked');
+		const selectedValues = Array.from(checkboxes).map((cb) => cb.value);
+		console.log(selectedValues); // Log or process selected values
+		for (let i = 0; i < selectedValues.length; i++) {
+			if (selectedValues[i] === "Pizza") {
+				likesPizza = true;
+			} else if (selectedValues[i] === "Pasta") {
+				likesPasta = true;
+			} else if (selectedValues[i] === "Pap & Wors") {
+				likesPapWors = true;
+			} else {
+				continue;
+			}
+		}
+		const { watchesTV, listensToRadio, eatsOut, watchesMovies } =
+			getSelectedRadio();
+
+		// Basic validation
+		if (
+			fullname.value.trim() === "" ||
+			email.value.trim() === "" ||
+			dateOfBirth.value.trim() === "" ||
+			contactNumber.value.trim() === ""
+		) {
+			alert("Please fill in all required fields.");
+			return; // Stop submission
+		}
+
+		// Optional: add specific format validation (e.g., email format)
+		let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailPattern.test(email.value.trim())) {
+			alert("Please enter a valid email address.");
+			return;
+		}
+
+		let data = {
+			fullName: fullname.value,
+			email: email.value,
+			dateOfBirth: dateOfBirth.value,
+			contactNumber: contactNumber.value,
+			likesPizza: likesPizza,
+			likesPasta: likesPasta,
+			likesPapWors: likesPapWors,
+			watchesMovies: watchesMovies,
+			listensToRadio: listensToRadio,
+			eatsOut: eatsOut,
+			watchesTV: watchesTV,
+		};
+		try {
+			const res = await fetch("http://localhost:3001/api/users", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(data),
+			});
+			if (!res.ok) {
+				throw new Error("Failed to add new survey");
+			}
+			const newSurvey = await res.json();
+			console.log(newSurvey);
+		} catch (error) {
+			console.error("Error adding survey");
+		}
+	});
