@@ -99,6 +99,13 @@ th {
 	word-wrap: normal;
 }
 
+input[type="radio"] {
+	width: 20%;
+	margin: 0 auto;
+	display: block;
+	font-size: 4rem;
+}
+
 th {
 	background-color: blanchedalmond;
 }
