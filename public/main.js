@@ -14,7 +14,6 @@ function getCheckedFoods(event) {
 	event.preventDefault();
 	const checkboxes = document.querySelectorAll('input[name="food"]:checked');
 	const selectedValues = Array.from(checkboxes).map((cb) => cb.value);
-	console.log(selectedValues); // Output the selected values
 }
 
 function getSelectedRadio() {
@@ -24,8 +23,6 @@ function getSelectedRadio() {
 		eatsOut: parseInt(getCheckedValue("eat-out")),
 		watchesMovies: parseInt(getCheckedValue("movies")),
 	};
-
-	console.log(results); // Display results or send to server
 
 	let watchesTV = results.watchesTV >= 1 && results.watchesTV <= 3;
 	let listensToRadio =
@@ -47,7 +44,7 @@ document
 		event.preventDefault();
 		const checkboxes = document.querySelectorAll('input[name="food"]:checked');
 		const selectedValues = Array.from(checkboxes).map((cb) => cb.value);
-		console.log(selectedValues); // Log or process selected values
+
 		for (let i = 0; i < selectedValues.length; i++) {
 			if (selectedValues[i] === "Pizza") {
 				likesPizza = true;
@@ -69,11 +66,11 @@ document
 			dateOfBirth.value.trim() === "" ||
 			contactNumber.value.trim() === ""
 		) {
-			alert("Please fill in all required fields.");
+			alert("Please fill in all the fields.");
 			return; // Stop submission
 		}
 
-		// Optional: add specific format validation (e.g., email format)
+		// Email validation
 		let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailPattern.test(email.value.trim())) {
 			alert("Please enter a valid email address.");
@@ -103,7 +100,6 @@ document
 				throw new Error("Failed to add new survey");
 			}
 			const newSurvey = await res.json();
-			console.log(newSurvey);
 		} catch (error) {
 			console.error("Error adding survey");
 		}

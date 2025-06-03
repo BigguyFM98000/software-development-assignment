@@ -44,8 +44,8 @@ app.post(
 			.custom((dob) => {
 				const today = new Date();
 				const age = today.getFullYear() - new Date(dob).getFullYear();
-				if (age < 18) {
-					throw new Error("User must be at least 18 years old");
+				if (age < 5 && age > 120) {
+					throw new Error("User must be at least 5 years old");
 				}
 				return true;
 			}),
@@ -125,8 +125,8 @@ app.put(
 			.custom((dob) => {
 				const today = new Date();
 				const age = today.getFullYear() - new Date(dob).getFullYear();
-				if (age < 18) {
-					throw new Error("User must be at least 18 years old");
+				if (age < 5 && age > 120) {
+					throw new Error("User must be at least 5 years old");
 				}
 				return true;
 			}),
