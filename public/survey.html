@@ -15,7 +15,7 @@
 			</nav>
 		</header>
 		<section>
-			<form autocomplete="off">
+			<form autocomplete="off" id="foodForm">
 				<div class="personal-info">
 					<div class="personal">
 						<span>Personal Details:</span>
@@ -34,23 +34,28 @@
 				<div class="preferences">
 					<span>What is your favorite food?</span>
 					<div>
-						<input type="checkbox" name="food" id="pizza" /><label for="pizza"
+						<input type="checkbox" name="food" id="pizza" value="Pizza" /><label
+							for="pizza"
 							>Pizza</label
 						>
 					</div>
 					<div>
-						<input type="checkbox" name="food" id="pasta" /><label for="pasta"
+						<input type="checkbox" name="food" id="pasta" value="Pasta" /><label
+							for="pasta"
 							>Pasta</label
 						>
 					</div>
 					<div>
-						<input type="checkbox" name="food" id="pap-and-wors" /><label
-							for="pap-and-wors"
-							>Pap & Wors</label
-						>
+						<input
+							type="checkbox"
+							name="food"
+							id="pap-and-wors"
+							value="Pap & Wors"
+						/><label for="pap-and-wors">Pap & Wors</label>
 					</div>
 					<div>
-						<input type="checkbox" name="food" id="other" /><label for="other"
+						<input type="checkbox" name="food" id="other" value="Other" /><label
+							for="other"
 							>Other</label
 						>
 					</div>
@@ -170,7 +175,9 @@
 						</tr>
 					</table>
 				</div>
-				<div class="submit-btn"><button type="submit">SUBMIT</button></div>
+				<div class="submit-btn">
+					<button id="submit-button" type="submit">SUBMIT</button>
+				</div>
 			</form>
 		</section>
 		<script src="main.js"></script>

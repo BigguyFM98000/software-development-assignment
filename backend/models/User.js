@@ -4,6 +4,7 @@ const UserSchema = new mongoose.Schema({
 	fullName: { type: String, required: true },
 	email: { type: String, required: true, unique: true },
 	dateOfBirth: { type: Date, required: true },
+	contactNumber: { type: Number, required: true },
 	preferences: {
 		likesPizza: { type: Boolean, default: false },
 		likesPasta: { type: Boolean, default: false },
