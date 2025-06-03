@@ -76,6 +76,15 @@ document
 			alert("Please enter a valid email address.");
 			return;
 		}
+		if (
+			watchesMovies === "" &&
+			listensToRadio === "" &&
+			eatsOut === "" &&
+			watchesTV === ""
+		) {
+			alert("Please check all radio buttons");
+			return;
+		}
 
 		let data = {
 			fullName: fullname.value,
