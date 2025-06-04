@@ -109,6 +109,7 @@ document
 				throw new Error("Failed to add new survey");
 			}
 			const newSurvey = await res.json();
+			console.log(newSurvey);
 		} catch (error) {
 			console.error("Error adding survey");
 		}

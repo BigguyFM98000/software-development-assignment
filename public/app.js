@@ -18,7 +18,7 @@ async function getPercentages() {
 			throw new Error("Failed to fetch percentages");
 		}
 		const percentages = await res.json();
-
+		console.log(percentages);
 		pizzaPercentage.innerText = `${percentages.pizza.toFixed(1)}% Pizza`;
 		pastaPercentage.innerText = `${percentages.pasta.toFixed(1)}% Pasta`;
 		papworsPercentage.innerText = `${percentages.papWors.toFixed(
@@ -41,7 +41,7 @@ async function getTotalSurveys() {
 			throw new Error("Failed to fetch users");
 		}
 		const users = await res.json();
-
+		console.log(users);
 		totalSurveys.innerText = `${users.length} survey(s)`;
 		let stats = calculateAgeStats(users);
 		averageAge.innerText = `${stats.averageAge} average age`;
